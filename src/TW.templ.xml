@@ -44,6 +44,7 @@
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="13" BitOffset="0" />
                 <Parameter Id="%AID%_UP-%TT%%CC%011" Name="Ch%C%DimCurve"              ParameterType="%AID%_PT-DimCurve" Offset="0" BitOffset="0" Text="Dimmkurve" Value="1" />
                 <Parameter Id="%AID%_UP-%TT%%CC%012" Name="Ch%C%StartupBehavior"       ParameterType="%AID%_PT-StartupBehavior" Offset="0" BitOffset="3" Text="Einschaltverhalten" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%102" Name="Ch%C%StartupBehaviorHcl"    ParameterType="%AID%_PT-StartupBehavior" Offset="0" BitOffset="3" Text="Einschaltverhalten bei Uebersteuern" Value="0" />
                 <!-- 3 bits free -->
               </Union>
               <Union SizeInBit="96">
@@ -93,6 +94,79 @@
                 <Memory CodeSegment="%AID%_RS-04-00000" Offset="78" BitOffset="0" />
                 <op:usePart name="MEASUREPROTTW" xpath="//Static/Parameters/Union/*[position()>1]" />
               </Union>
+              <Union SizeInBit="80">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="102" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%070" Name="Ch%C%HclActiveInputKoActive" ParameterType="%AID%_PT-OnOffYesNo" Offset="0" BitOffset="0" Text="HCL Aktiv-KO verwenden" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%071" Name="Ch%C%HclActiveInputKoKind" ParameterType="%AID%_PT-HclKoInputKind" Offset="0" BitOffset="1" Text="Quelle des Aktiv-KO" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%103" Name="Ch%C%HclBrightnessInputKoActive" ParameterType="%AID%_PT-OnOffYesNo" Offset="0" BitOffset="2" Text="HCL Helligkeit verwenden" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%104" Name="Ch%C%HclBrightnessInputKoKind" ParameterType="%AID%_PT-HclKoInputKind" Offset="0" BitOffset="3" Text="Quelle des HCL-Helligkeits-KO" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%106" Name="Ch%C%HclColorTemperatureInputKoActive" ParameterType="%AID%_PT-OnOffYesNo" Offset="0" BitOffset="4" Text="HCL Farbtemperatur verwenden" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%107" Name="Ch%C%HclColorTemperatureInputKoKind" ParameterType="%AID%_PT-HclKoInputKind" Offset="0" BitOffset="5" Text="Quelle des HCL-Farbtemperatur-KO" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%073" Name="Ch%C%HclCombinedInputKoActive" ParameterType="%AID%_PT-OnOffYesNo" Offset="0" BitOffset="6" Text="HCL Sollwert kombiniert verwenden" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%074" Name="Ch%C%HclCombinedInputKoKind" ParameterType="%AID%_PT-HclKoInputKind" Offset="0" BitOffset="7" Text="Quelle des kombinierten HCL-Soll-KO" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%094" Name="Ch%C%HclStatusActiveKo" ParameterType="%AID%_PT-OnOffYesNo" Offset="1" BitOffset="0" Text="Statusobjekt HCL aktiv senden" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%097" Name="Ch%C%HclStatusManualKo" ParameterType="%AID%_PT-OnOffYesNo" Offset="1" BitOffset="1" Text="Statusobjekt Quelle aktuell manuell senden" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%088" Name="Ch%C%HclActivateOnStartup" ParameterType="%AID%_PT-HclActivateOnStartup" Offset="1" BitOffset="2" Text="HCL aktiv setzen bei" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%072" Name="Ch%C%HclActiveInputKoNumber" ParameterType="%AID%_PT-HclKoAbsNumber" Offset="2" BitOffset="0" Text="Nummer des Aktiv-KO" Value="%K25%" op:nowarn="true" />
+                <Parameter Id="%AID%_UP-%TT%%CC%105" Name="Ch%C%HclBrightnessInputKoNumber" ParameterType="%AID%_PT-HclKoAbsNumber" Offset="4" BitOffset="0" Text="Nummer des HCL-Helligkeits-KO" Value="%K20%" op:nowarn="true" />
+                <Parameter Id="%AID%_UP-%TT%%CC%108" Name="Ch%C%HclColorTemperatureInputKoNumber" ParameterType="%AID%_PT-HclKoAbsNumber" Offset="6" BitOffset="0" Text="Nummer des HCL-Farbtemperatur-KO" Value="%K21%" op:nowarn="true" />
+                <Parameter Id="%AID%_UP-%TT%%CC%075" Name="Ch%C%HclCombinedInputKoNumber" ParameterType="%AID%_PT-HclKoAbsNumber" Offset="8" BitOffset="0" Text="Nummer des kombinierten HCL-Soll-KO" Value="%K22%" op:nowarn="true" />
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="112" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%076" Name="Ch%C%HclBrightnessManualPolicy" ParameterType="%AID%_PT-HclOverridePolicy" Offset="0" BitOffset="0" Text="Lokale Helligkeits-Eingaenge im HCL-Modus" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%077" Name="Ch%C%HclBrightnessResumeMode" ParameterType="%AID%_PT-HclResumeMode" Offset="0" BitOffset="2" Text="Rueckkehr nach lokalem Helligkeits-Override" Value="1" />
+                <Parameter Id="%AID%_UP-%TT%%CC%080" Name="Ch%C%HclTemperatureManualPolicy" ParameterType="%AID%_PT-HclOverridePolicy" Offset="0" BitOffset="5" Text="Lokale Farbtemperatur-Eingaenge im HCL-Modus" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%081" Name="Ch%C%HclTemperatureResumeMode" ParameterType="%AID%_PT-HclResumeMode" Offset="1" BitOffset="0" Text="Rueckkehr nach lokalem Farbtemperatur-Override" Value="1" />
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="114" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%078" Name="Ch%C%HclBrightnessResumeTimeBase" ParameterType="%AID%_PT-DelayBase" Offset="0" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%079" Name="Ch%C%HclBrightnessResumeTime" ParameterType="%AID%_PT-DelayTime" Offset="0" BitOffset="2" Text="Zeit" Value="0" />
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="116" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%082" Name="Ch%C%HclTemperatureResumeTimeBase" ParameterType="%AID%_PT-DelayBase" Offset="0" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%083" Name="Ch%C%HclTemperatureResumeTime" ParameterType="%AID%_PT-DelayTime" Offset="0" BitOffset="2" Text="Zeit" Value="0" />
+              </Union>
+              <Union SizeInBit="8">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="118" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%084" Name="Ch%C%HclSceneResumeMode" ParameterType="%AID%_PT-HclSceneResumeMode" Offset="0" BitOffset="0" Text="Rueckkehr nach lokaler Szene" Value="1" />
+                <Parameter Id="%AID%_UP-%TT%%CC%087" Name="Ch%C%HclMissingFallback" ParameterType="%AID%_PT-HclMissingFallback" Offset="0" BitOffset="3" Text="Fallback ohne HCL-Sollwert" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%093" Name="Ch%C%HclStartBehavior" ParameterType="%AID%_PT-HclStartBehavior" Offset="0" BitOffset="4" Text="Verhalten bei HCL-Start" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%089" Name="Ch%C%HclSwitchOnBehavior" ParameterType="%AID%_PT-HclSwitchOnBehavior" Offset="0" BitOffset="5" Text="Einschaltverhalten" Value="0" />
+                <!-- 1 bit free -->
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="119" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%085" Name="Ch%C%HclSceneResumeTimeBase" ParameterType="%AID%_PT-DelayBase" Offset="0" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%086" Name="Ch%C%HclSceneResumeTime" ParameterType="%AID%_PT-DelayTime" Offset="0" BitOffset="2" Text="Zeit" Value="0" />
+              </Union>
+              <Union SizeInBit="8">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="121" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%090" Name="Ch%C%HclSecondOnBehavior" ParameterType="%AID%_PT-HclSecondOnBehaviorTw" Offset="0" BitOffset="0" Text="Verhalten bei zweitem EIN" Value="1" />
+                <Parameter Id="%AID%_UP-%TT%%CC%100" Name="Ch%C%HclEnabled" ParameterType="%AID%_PT-OnOffYesNo" Offset="0" BitOffset="3" Text="HCL aktivieren" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%101" Name="Ch%C%HclReadOnStartup" ParameterType="%AID%_PT-HclActivateOnStartup" Offset="0" BitOffset="4" Text="HCL KO Lesen bei" Value="0" />
+                <!-- 2 bits free -->
+              </Union>
+              <Union SizeInBit="8">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="122" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%091" Name="Ch%C%HclSecondOnBrightness" ParameterType="%AID%_PT-ValueDpt5001" Offset="0" BitOffset="0" Text="Vorgegebene Helligkeit" Value="100" SuffixText="%" />
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="123" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%092" Name="Ch%C%HclSecondOnColorTemperature" ParameterType="%AID%_PT-ColorTemperature" Offset="0" BitOffset="0" Text="Vorgegebene Lichttemperatur" Value="4000" SuffixText="K" />
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="125" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%095" Name="Ch%C%HclStatusActiveBase" ParameterType="%AID%_PT-DelayBase" Offset="0" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%096" Name="Ch%C%HclStatusActiveTime" ParameterType="%AID%_PT-DelayTime" Offset="0" BitOffset="2" Text="Zeit" Value="0" />
+              </Union>
+              <Union SizeInBit="16">
+                <Memory CodeSegment="%AID%_RS-04-00000" Offset="127" BitOffset="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%098" Name="Ch%C%HclStatusManualBase" ParameterType="%AID%_PT-DelayBase" Offset="0" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="%AID%_UP-%TT%%CC%099" Name="Ch%C%HclStatusManualTime" ParameterType="%AID%_PT-DelayTime" Offset="0" BitOffset="2" Text="Zeit" Value="0" />
+              </Union>
 
             </Parameters>
 
@@ -109,6 +183,7 @@
               <ParameterRef Id="%AID%_UP-%TT%%CC%010_R-%TT%%CC%01001" RefId="%AID%_UP-%TT%%CC%010" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_UP-%TT%%CC%011" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_UP-%TT%%CC%012" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%102_R-%TT%%CC%10201" RefId="%AID%_UP-%TT%%CC%102" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%013_R-%TT%%CC%01301" RefId="%AID%_UP-%TT%%CC%013" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%014_R-%TT%%CC%01401" RefId="%AID%_UP-%TT%%CC%014" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%015_R-%TT%%CC%01501" RefId="%AID%_UP-%TT%%CC%015" />
@@ -132,6 +207,44 @@
               <ParameterRef Id="%AID%_UP-%TT%%CC%033_R-%TT%%CC%03301" RefId="%AID%_UP-%TT%%CC%033" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%034_R-%TT%%CC%03401" RefId="%AID%_UP-%TT%%CC%034" />
               <ParameterRef Id="%AID%_UP-%TT%%CC%035_R-%TT%%CC%03501" RefId="%AID%_UP-%TT%%CC%035" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%070_R-%TT%%CC%07001" RefId="%AID%_UP-%TT%%CC%070" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%071_R-%TT%%CC%07101" RefId="%AID%_UP-%TT%%CC%071" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%072_R-%TT%%CC%07201" RefId="%AID%_UP-%TT%%CC%072" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%103_R-%TT%%CC%10301" RefId="%AID%_UP-%TT%%CC%103" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%104_R-%TT%%CC%10401" RefId="%AID%_UP-%TT%%CC%104" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%105_R-%TT%%CC%10501" RefId="%AID%_UP-%TT%%CC%105" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%106_R-%TT%%CC%10601" RefId="%AID%_UP-%TT%%CC%106" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%107_R-%TT%%CC%10701" RefId="%AID%_UP-%TT%%CC%107" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%108_R-%TT%%CC%10801" RefId="%AID%_UP-%TT%%CC%108" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%073_R-%TT%%CC%07301" RefId="%AID%_UP-%TT%%CC%073" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%074_R-%TT%%CC%07401" RefId="%AID%_UP-%TT%%CC%074" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%075_R-%TT%%CC%07501" RefId="%AID%_UP-%TT%%CC%075" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%076_R-%TT%%CC%07601" RefId="%AID%_UP-%TT%%CC%076" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%077_R-%TT%%CC%07701" RefId="%AID%_UP-%TT%%CC%077" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%078_R-%TT%%CC%07801" RefId="%AID%_UP-%TT%%CC%078" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%079_R-%TT%%CC%07901" RefId="%AID%_UP-%TT%%CC%079" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%080_R-%TT%%CC%08001" RefId="%AID%_UP-%TT%%CC%080" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%081_R-%TT%%CC%08101" RefId="%AID%_UP-%TT%%CC%081" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%082_R-%TT%%CC%08201" RefId="%AID%_UP-%TT%%CC%082" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%083_R-%TT%%CC%08301" RefId="%AID%_UP-%TT%%CC%083" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%084_R-%TT%%CC%08401" RefId="%AID%_UP-%TT%%CC%084" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%085_R-%TT%%CC%08501" RefId="%AID%_UP-%TT%%CC%085" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%086_R-%TT%%CC%08601" RefId="%AID%_UP-%TT%%CC%086" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%087_R-%TT%%CC%08701" RefId="%AID%_UP-%TT%%CC%087" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%088_R-%TT%%CC%08801" RefId="%AID%_UP-%TT%%CC%088" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%089_R-%TT%%CC%08901" RefId="%AID%_UP-%TT%%CC%089" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%090_R-%TT%%CC%09001" RefId="%AID%_UP-%TT%%CC%090" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%091_R-%TT%%CC%09101" RefId="%AID%_UP-%TT%%CC%091" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%092_R-%TT%%CC%09201" RefId="%AID%_UP-%TT%%CC%092" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%093_R-%TT%%CC%09301" RefId="%AID%_UP-%TT%%CC%093" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%094_R-%TT%%CC%09401" RefId="%AID%_UP-%TT%%CC%094" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%095_R-%TT%%CC%09501" RefId="%AID%_UP-%TT%%CC%095" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%096_R-%TT%%CC%09601" RefId="%AID%_UP-%TT%%CC%096" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%097_R-%TT%%CC%09701" RefId="%AID%_UP-%TT%%CC%097" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%098_R-%TT%%CC%09801" RefId="%AID%_UP-%TT%%CC%098" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%099_R-%TT%%CC%09901" RefId="%AID%_UP-%TT%%CC%099" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%100_R-%TT%%CC%10001" RefId="%AID%_UP-%TT%%CC%100" />
+              <ParameterRef Id="%AID%_UP-%TT%%CC%101_R-%TT%%CC%10101" RefId="%AID%_UP-%TT%%CC%101" />
               <!-- PART uses IDs 036-061 -->
               <op:usePart name="MEASUREPROTTW" xpath="//Static/ParameterRefs/*" />
               <!-- Scene Parameter Refs -->
@@ -153,7 +266,18 @@
               <ComObject Id="%AID%_O-%TT%%CC%011" Name="Ch%C%ColorTemperatureStatus" Text="Farbtemperatur Status"  Number="%K11%" FunctionText="LED-TW %C%: Status"   ObjectSize="2 Bytes" ReadFlag="Enabled"  WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled"  UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-7-600" />
               <ComObject Id="%AID%_O-%TT%%CC%012" Name="Ch%C%Night"                  Text="Nacht"                  Number="%K12%" FunctionText="LED-TW %C%: Schalten" ObjectSize="1 Bit"   ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1"   />
               <ComObject Id="%AID%_O-%TT%%CC%013" Name="Ch%C%Scene"                  Text="Szene"                  Number="%K13%" FunctionText="LED-TW %C%: Szene"    ObjectSize="1 Byte"  ReadFlag="Disabled" WriteFlag="Enabled"  CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-17-1"  />
+              <!-- PART uses IDs 014-019 -->
               <op:usePart name="MEASUREPROTTW" xpath="//Static/ComObjectTable/*" />
+              <ComObject Id="%AID%_O-%TT%%CC%020" Name="Ch%C%HclBrightnessInput" Text="HCL Helligkeit" Number="%K20%" FunctionText="LED-TW %C%: HCL" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%021" Name="Ch%C%HclColorTemperatureInput" Text="HCL Farbtemperatur" Number="%K21%" FunctionText="LED-TW %C%: HCL" ObjectSize="2 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-7-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%022" Name="Ch%C%HclCombinedInput" Text="HCL Sollwert kombiniert" Number="%K22%" FunctionText="LED-TW %C%: HCL" ObjectSize="6 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-249-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%023" Name="Ch%C%HclActiveStatus" Text="HCL aktiv Status" Number="%K23%" FunctionText="LED-TW %C%: Status" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-11" />
+              <ComObject Id="%AID%_O-%TT%%CC%024" Name="Ch%C%HclManualOverrideStatus" Text="Quelle manuell Status" Number="%K24%" FunctionText="LED-TW %C%: Status" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-11" />
+              <ComObject Id="%AID%_O-%TT%%CC%025" Name="Ch%C%HclActiveInput" Text="HCL aktiv" Number="%K25%" FunctionText="LED-TW %C%: HCL" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%026" Name="Ch%C%CombinedInput" Text="Dimmwert/Farbtemperatur kombiniert" Number="%K26%" FunctionText="LED-TW %C%: Dimmen" ObjectSize="6 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-249-600" />
+              <ComObject Id="%AID%_O-%TT%%CC%027" Name="Ch%C%Reserved27" Text="Reserviert" Number="%K27%" FunctionText="LED-TW %C%: reserviert" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Disabled" CommunicationFlag="Disabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%028" Name="Ch%C%Reserved28" Text="Reserviert" Number="%K28%" FunctionText="LED-TW %C%: reserviert" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Disabled" CommunicationFlag="Disabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="%AID%_O-%TT%%CC%029" Name="Ch%C%Reserved29" Text="Reserviert" Number="%K29%" FunctionText="LED-TW %C%: reserviert" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Disabled" CommunicationFlag="Disabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
             </ComObjectTable>
 
             <ComObjectRefs>
@@ -171,8 +295,15 @@
               <ComObjectRef Id="%AID%_O-%TT%%CC%011_R-%TT%%CC%01101" RefId="%AID%_O-%TT%%CC%011" Text="{{0:LED-TW %C%}}: Farbtemperatur Status" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%012_R-%TT%%CC%01201" RefId="%AID%_O-%TT%%CC%012" Text="{{0:LED-TW %C%}}: Nacht" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
               <ComObjectRef Id="%AID%_O-%TT%%CC%013_R-%TT%%CC%01301" RefId="%AID%_O-%TT%%CC%013" Text="{{0:LED-TW %C%}}: Szene" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
-              <!-- PART uses IDs 014-018 -->
+              <!-- PART uses IDs 014-019 -->
               <op:usePart name="MEASUREPROTTW" xpath="//Static/ComObjectRefs/*" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%020_R-%TT%%CC%02001" RefId="%AID%_O-%TT%%CC%020" Text="{{0:LED-TW %C%}}: HCL Helligkeit" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%021_R-%TT%%CC%02101" RefId="%AID%_O-%TT%%CC%021" Text="{{0:LED-TW %C%}}: HCL Farbtemperatur" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%022_R-%TT%%CC%02201" RefId="%AID%_O-%TT%%CC%022" Text="{{0:LED-TW %C%}}: HCL Sollwert kombiniert" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%023_R-%TT%%CC%02301" RefId="%AID%_O-%TT%%CC%023" Text="{{0:LED-TW %C%}}: HCL aktiv" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%024_R-%TT%%CC%02401" RefId="%AID%_O-%TT%%CC%024" Text="{{0:LED-TW %C%}}: Quelle manuell" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%025_R-%TT%%CC%02501" RefId="%AID%_O-%TT%%CC%025" Text="{{0:LED-TW %C%}}: HCL aktiv" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
+              <ComObjectRef Id="%AID%_O-%TT%%CC%026_R-%TT%%CC%02601" RefId="%AID%_O-%TT%%CC%026" Text="{{0:LED-TW %C%}}: Dimmwert/Farbtemperatur kombiniert" TextParameterRefId="%AID%_P-%TT%%CC%002_R-%TT%%CC%00201" />
             </ComObjectRefs>
 
           </Static>
@@ -190,6 +321,7 @@
                     <ComObjectRefRef RefId="%AID%_O-%TT%%CC%007_R-%TT%%CC%00701" /> <!-- Brightness Rel -->
                     <ComObjectRefRef RefId="%AID%_O-%TT%%CC%009_R-%TT%%CC%00901" /> <!-- Color Temperature -->
                     <ComObjectRefRef RefId="%AID%_O-%TT%%CC%010_R-%TT%%CC%01001" /> <!-- Color Temperature Rel -->
+                    <ComObjectRefRef RefId="%AID%_O-%TT%%CC%026_R-%TT%%CC%02601" /> <!-- Combined Input -->
                     <ComObjectRefRef RefId="%AID%_O-%TT%%CC%012_R-%TT%%CC%01201" /> <!-- Nacht -->
 
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Kanaldefinition" UIHint="Headline" />
@@ -287,7 +419,162 @@
                     
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Sonstige Konfiguration" UIHint="Headline" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%%CC%011_R-%TT%%CC%01101" IndentLevel="1" /> <!-- DimCurve -->
-                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="1" /> <!-- StartupBehavior -->
+                    <choose ParamRefId="%AID%_UP-%TT%%CC%100_R-%TT%%CC%10001">
+                      <when test="1">
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%102_R-%TT%%CC%10201" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                      </when>
+                      <when test="0">
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%012_R-%TT%%CC%01201" IndentLevel="1" /> <!-- StartupBehavior -->
+                      </when>
+                    </choose>
+
+                    <ParameterSeparator Id="%AID%_PS-nnn" Text="HCL-Kopplung" UIHint="Headline" />
+                    <ParameterRefRef RefId="%AID%_UP-%TT%%CC%100_R-%TT%%CC%10001" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                    <choose ParamRefId="%AID%_UP-%TT%%CC%100_R-%TT%%CC%10001">
+                      <when test="0">
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="HCL ist fuer diesen Kanal deaktiviert. Ohne Aktivierung bleiben alle HCL-Funktionen und alle HCL-Kommunikationsobjekte dieses Kanals ausgeblendet." />
+                      </when>
+                      <when test="1">
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Dieser Kanal uebernimmt HCL-Aktivierung und HCL-Sollwerte ueber KNX-KOs, zum Beispiel aus einem HclModule." />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Moeglich sind separate HCL-Helligkeit, HCL-Farbtemperatur oder ein kombinierter HCL-Sollwert." />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="Das LedModule berechnet dabei keine eigene HCL-Kurve, sondern folgt den empfangenen Vorgaben." />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="&quot;HCL aktiv setzen bei&quot; setzt den internen HCL-Modus lokal." />
+                        <ParameterSeparator Id="%AID%_PS-nnn" Text="&quot;HCL KO Lesen bei&quot; liest die konfigurierten HCL-KOs nach Reset oder Busspannungswiederkehr erneut ein." />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%070_R-%TT%%CC%07001" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%070_R-%TT%%CC%07001">
+                          <when test="1">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%071_R-%TT%%CC%07101" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%071_R-%TT%%CC%07101">
+                              <when test="0">
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%025_R-%TT%%CC%02501" />
+                              </when>
+                              <when test="1">
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%072_R-%TT%%CC%07201" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                              </when>
+                            </choose>
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%103_R-%TT%%CC%10301" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%103_R-%TT%%CC%10301">
+                          <when test="1">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%104_R-%TT%%CC%10401" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%104_R-%TT%%CC%10401">
+                              <when test="0">
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%020_R-%TT%%CC%02001" />
+                              </when>
+                              <when test="1">
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%105_R-%TT%%CC%10501" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                              </when>
+                            </choose>
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%106_R-%TT%%CC%10601" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%106_R-%TT%%CC%10601">
+                          <when test="1">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%107_R-%TT%%CC%10701" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%107_R-%TT%%CC%10701">
+                              <when test="0">
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%021_R-%TT%%CC%02101" />
+                              </when>
+                              <when test="1">
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%108_R-%TT%%CC%10801" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                              </when>
+                            </choose>
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%073_R-%TT%%CC%07301" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%073_R-%TT%%CC%07301">
+                          <when test="1">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%074_R-%TT%%CC%07401" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                            <choose ParamRefId="%AID%_UP-%TT%%CC%074_R-%TT%%CC%07401">
+                              <when test="0">
+                                <ComObjectRefRef RefId="%AID%_O-%TT%%CC%022_R-%TT%%CC%02201" />
+                              </when>
+                              <when test="1">
+                                <ParameterRefRef RefId="%AID%_UP-%TT%%CC%075_R-%TT%%CC%07501" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                              </when>
+                            </choose>
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%088_R-%TT%%CC%08801" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%101_R-%TT%%CC%10101" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%076_R-%TT%%CC%07601" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%077_R-%TT%%CC%07701" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%077_R-%TT%%CC%07701">
+                          <when test="2">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%078_R-%TT%%CC%07801" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%079_R-%TT%%CC%07901" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%080_R-%TT%%CC%08001" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%081_R-%TT%%CC%08101" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%081_R-%TT%%CC%08101">
+                          <when test="2">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%082_R-%TT%%CC%08201" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%083_R-%TT%%CC%08301" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%084_R-%TT%%CC%08401" IndentLevel="1" HelpContext="LED-HCL-Szenen" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%084_R-%TT%%CC%08401">
+                          <when test="3">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%085_R-%TT%%CC%08501" IndentLevel="2" HelpContext="LED-HCL-Szenen" />
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%086_R-%TT%%CC%08601" IndentLevel="2" HelpContext="LED-HCL-Szenen" />
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%087_R-%TT%%CC%08701" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%093_R-%TT%%CC%09301" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%089_R-%TT%%CC%08901" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%090_R-%TT%%CC%09001" IndentLevel="1" HelpContext="LED-HCL-Allgemein" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%090_R-%TT%%CC%09001">
+                          <when test="2">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%091_R-%TT%%CC%09101" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                          </when>
+                          <when test="3">
+                            <ParameterRefRef RefId="%AID%_UP-%TT%%CC%092_R-%TT%%CC%09201" IndentLevel="2" HelpContext="LED-HCL-Allgemein" />
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%094_R-%TT%%CC%09401" IndentLevel="1" HelpContext="LED-HCL-Ausgaenge-Status" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%094_R-%TT%%CC%09401">
+                          <when test="1">
+                            <ParameterBlock Id="%AID%_PB-nnn" Name="HclStatusActive" Inline="true" Layout="Grid">
+                              <Rows>
+                                <Row Id="%AID%_PB-nnn_R-1" Name="Row1" />
+                              </Rows>
+                              <Columns>
+                                <Column Id="%AID%_PB-nnn_C-1" Name="Col1" Width="1%" />
+                                <Column Id="%AID%_PB-nnn_C-2" Name="Col2" Width="44%" />
+                                <Column Id="%AID%_PB-nnn_C-3" Name="Col3" Width="15%" />
+                                <Column Id="%AID%_PB-nnn_C-4" Name="Col4" Width="20%" />
+                              </Columns>
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="   HCL aktiv zyklisch senden&#10;   (0 = nicht senden)" Cell="1,2" />
+                              <ParameterRefRef RefId="%AID%_UP-%TT%%CC%096_R-%TT%%CC%09601" Cell="1,3" HelpContext="LED-HCL-Ausgaenge-Status" />
+                              <ParameterRefRef RefId="%AID%_UP-%TT%%CC%095_R-%TT%%CC%09501" Cell="1,4" HelpContext="LED-HCL-Ausgaenge-Status" />
+                            </ParameterBlock>
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%023_R-%TT%%CC%02301" />
+                          </when>
+                        </choose>
+                        <ParameterRefRef RefId="%AID%_UP-%TT%%CC%097_R-%TT%%CC%09701" IndentLevel="1" HelpContext="LED-HCL-Ausgaenge-Status" />
+                        <choose ParamRefId="%AID%_UP-%TT%%CC%097_R-%TT%%CC%09701">
+                          <when test="1">
+                            <ParameterBlock Id="%AID%_PB-nnn" Name="HclStatusManual" Inline="true" Layout="Grid">
+                              <Rows>
+                                <Row Id="%AID%_PB-nnn_R-1" Name="Row1" />
+                              </Rows>
+                              <Columns>
+                                <Column Id="%AID%_PB-nnn_C-1" Name="Col1" Width="1%" />
+                                <Column Id="%AID%_PB-nnn_C-2" Name="Col2" Width="44%" />
+                                <Column Id="%AID%_PB-nnn_C-3" Name="Col3" Width="15%" />
+                                <Column Id="%AID%_PB-nnn_C-4" Name="Col4" Width="20%" />
+                              </Columns>
+                              <ParameterSeparator Id="%AID%_PS-nnn" Text="   Manuell-Status zyklisch senden&#10;   (0 = nicht senden)" Cell="1,2" />
+                              <ParameterRefRef RefId="%AID%_UP-%TT%%CC%099_R-%TT%%CC%09901" Cell="1,3" HelpContext="LED-HCL-Ausgaenge-Status" />
+                              <ParameterRefRef RefId="%AID%_UP-%TT%%CC%098_R-%TT%%CC%09801" Cell="1,4" HelpContext="LED-HCL-Ausgaenge-Status" />
+                            </ParameterBlock>
+                            <ComObjectRefRef RefId="%AID%_O-%TT%%CC%024_R-%TT%%CC%02401" />
+                          </when>
+                        </choose>
+                      </when>
+                    </choose>
 
                     <ParameterSeparator Id="%AID%_PS-nnn" Text="Treppenlicht" UIHint="Headline" />
                     <ParameterRefRef RefId="%AID%_UP-%TT%%CC%022_R-%TT%%CC%02201" IndentLevel="1" /> <!-- Stairway -->
@@ -353,6 +640,7 @@
               </choose>
             </ChannelIndependentBlock>
           </Dynamic>
+
         </ApplicationProgram>
       </ApplicationPrograms>
     </Manufacturer>

@@ -163,6 +163,94 @@
                 </TypeRestriction>
               </ParameterType>
 
+              <ParameterType Id="%AID%_PT-HclKoInputKind" Name="HclKoInputKind">
+                <TypeRestriction Base="Value" SizeInBit="1" UIHint="DropDown">
+                  <Enumeration Text="Eigenes KO" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Absolutes KO" Value="1" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclKoAbsNumber" Name="HclKoAbsNumber">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="1" maxInclusive="%MaxKoNumber%" />
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclActivateOnStartup" Name="HclActivateOnStartup">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Nie" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Nach Reset" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Nach Busspannungswiederkehr" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Nach Reset und Busspannungswiederkehr" Value="3" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclOverridePolicy" Name="HclOverridePolicy">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Temporaer lokal uebersteuern" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Im HCL-Modus blockieren" Value="1" Id="%ENID%" />
+                  <Enumeration Text="HCL lokal deaktivieren" Value="2" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclResumeMode" Name="HclResumeMode">
+                <TypeRestriction Base="Value" SizeInBit="3" UIHint="DropDown">
+                  <Enumeration Text="Erst nach expliziter Freigabe" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Am naechsten HCL-Schaltpunkt" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Nach Zeit" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Beim naechsten manuellen EIN" Value="3" Id="%ENID%" />
+                  <Enumeration Text="Beim naechsten AUS" Value="4" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclSceneResumeMode" Name="HclSceneResumeMode">
+                <TypeRestriction Base="Value" SizeInBit="3" UIHint="DropDown">
+                  <Enumeration Text="Erst nach expliziter Freigabe" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Am naechsten HCL-Schaltpunkt" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Beim naechsten manuellen EIN" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Nach Zeit" Value="3" Id="%ENID%" />
+                  <Enumeration Text="Beim naechsten AUS" Value="4" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclMissingFallback" Name="HclMissingFallback">
+                <TypeRestriction Base="Value" SizeInBit="1" UIHint="DropDown">
+                  <Enumeration Text="Letzten lokalen Wert halten" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Lokale Tag/Nacht-Defaultwerte verwenden" Value="1" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclSwitchOnBehavior" Name="HclSwitchOnBehavior">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Aktuellen HCL-Sollwert anfahren" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Einschaltverhalten bei Uebersteuern verwenden" Value="1" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclSecondOnBehaviorSingle" Name="HclSecondOnBehaviorSingle">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Keine Aktion" Value="0" Id="%ENID%" />
+                  <Enumeration Text="HCL erneut aktivieren" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Vorgegebene Helligkeit" Value="2" Id="%ENID%" />
+                  <Enumeration Text="HCL umschalten" Value="3" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclSecondOnBehaviorTw" Name="HclSecondOnBehaviorTw">
+                <TypeRestriction Base="Value" SizeInBit="3" UIHint="DropDown">
+                  <Enumeration Text="Keine Aktion" Value="0" Id="%ENID%" />
+                  <Enumeration Text="HCL erneut aktivieren" Value="1" Id="%ENID%" />
+                  <Enumeration Text="Vorgegebene Helligkeit" Value="2" Id="%ENID%" />
+                  <Enumeration Text="Vorgegebene Lichttemperatur" Value="3" Id="%ENID%" />
+                  <Enumeration Text="HCL umschalten" Value="4" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
+              <ParameterType Id="%AID%_PT-HclStartBehavior" Name="HclStartBehavior">
+                <TypeRestriction Base="Value" SizeInBit="1" UIHint="DropDown">
+                  <Enumeration Text="Schnell" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Langsam" Value="1" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+
             </ParameterTypes>
 
             <Parameters>

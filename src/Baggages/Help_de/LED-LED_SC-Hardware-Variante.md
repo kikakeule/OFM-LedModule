@@ -1,4 +1,4 @@
 ﻿### Hardware-Variante
 
-Basierend auf dieser Auswahl werden einige Konfigurationsoptionen ein- bzw. ausgeblendet.
+Diese Auswahl blendet nur die Optionen ein, die fuer die gewaehlte Hardware relevant sind.
 

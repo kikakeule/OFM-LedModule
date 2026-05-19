@@ -1,18 +1,22 @@
 ﻿### Kanalzuordnung
 
-Hier erfolgt die Zuordnung von Dimmkanälen zu den verfügbaren Hardwarekanälen (A, B, C, ...).
+Hier wird festgelegt, welcher Dimmkanal auf welchem Hardwarekanal arbeitet.
 
-Dazu wird zunächst der Typ ausgewählt. Aktuell werden unterstützt:
+Vorgehen:
 
-* EK - Einzelkanal
-* TW - Tunable White
-* RGB - Rot/Grün/Blau
+- Zuerst den Typ waehlen:
+- EK - Einzelkanal
+- TW - Tunable White
+- RGB - Rot/Gruen/Blau
 
-Danach wird die Nummer des Dimmkanals vom gewählten Typ zugeordnet, die für den Hardwarekanal verwendet werden soll, wobei eine "0" deaktiviert meint.
+- Danach die Nummer des Dimmkanals festlegen. Eine 0 bedeutet, dass der Hardwarekanal deaktiviert bleibt.
+- In der letzten Spalte die Rolle des Hardwarekanals innerhalb des gewaehlten Dimmkanals bestimmen.
 
-Beispiel: Hardwarekanäle "A" und "B" sollen zusammen Tunable White LEDs dimmen, dann wird beiden Kanälen der Typ "TW - Tunable White" zugeordnet und der Dimmkanal bei beiden auf "1" gesetzt. Möchte man nun auch mit den Hardwarekanälen "C" und "D" andere Tunable White LEDs dimmen, so wählt man denselben Typ aus, jedoch weißt Dimmkanal "2" zu.
+Beispiel:
+- Sollen die Hardwarekanaele A und B gemeinsam ein Tunable-White-Leuchtmittel dimmen, dann erhalten beide den Typ TW und den Dimmkanal 1.
+- Fuer ein zweites Tunable-White-Leuchtmittel auf C und D wird derselbe Typ verwendet, aber der Dimmkanal 2.
 
-In der letzten Spalte wird noch die Funktion innerhalb des Dimmkanals zugeordnet. Bei Tunable White wäre das "Warmweiß" und "Kaltweiß", bei RGB-Kanäle entsprechend die drei Farben.
+Hinweis:
+- Bei Tunable White sollte eine Farbe auf einem ungeraden und die andere auf einem geraden Hardwarekanal liegen. So werden beide Farben abwechselnd angesteuert und kurzzeitige Stromspitzen vermieden.
 
-**ACHTUNG**: Bei der Nutzung von Tunable White sollte darauf geachtet werden, dass eine Farbe auf einem "ungeraden" Kanal A/C/E/... und eine auf einem "geraden" Kanal B/D/F/... liegt. Dies stellt sicher, dass die beiden Farb-LEDs nicht zur gleichen Zeit angesteuert werden sondern abwechseln. Wird dies nicht berücksichtigt muss mit kurzzeitig erhöhten Strömen gerechnet und dies bei der Wahl des Netzteils eingeplant werden.
 

@@ -1,7 +1,10 @@
 ﻿### PWM-Frequenz
 
+Hier wird die PWM-Frequenz zwischen 200 und 1200 Hz festgelegt.
 
-Hier kann die PWM-Frequenz zwischen 200 und 1200 Hz gewählt werden.
+- Hoehere Frequenzen reduzieren sichtbares Flimmern, besonders fuer Kameras.
+- Niedrigere Frequenzen sind etwas effizienter.
 
-Höhere Frequenzen sind für das Auge (und Kameras) weniger sichtbar, niedrigere Frequenzen etwas effizienter (geringfügig weniger Strombedarf und Abwärme).
+Praxis:
+- Den Standardwert beibehalten, solange es keinen sichtbaren Flimmer-Effekt oder einen konkreten Effizienzgrund fuer eine Aenderung gibt.
 
